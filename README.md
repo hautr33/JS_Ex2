@@ -38,12 +38,16 @@ Không phải mọi số thập phân đều có thể biểu diễn chính xác
 Ví dụ: 0.1 và 0.2 là vô hạn tuần hoàn trong nhị phân. Dẫn đến sai số: 0.1 + 0.2 === 0.3 // 0.299999 === 0.3 => false
 ## 3. Destructure with object in object
 Khi destructure nếu thay đổi thay đổi giá trị ở tầng đầu thì giá trị object gốc vẫn không thay đổi, ví dụ:
+
+```javascript
 const obj = { name: "Hau", age: 25 };
 const { name } = obj;
 name = "Hau ne";
 console.log(obj.name); // "Hau" 
+```
 
 Tuy nhiên, nếu thay đổi giá trị ở tầng sâu hơn thì giá trị của object gốc sẽ bị thay đổi, ví dụ:
+```javascript
 const obj = {
   name: "Hau",
   age: 25,
@@ -55,5 +59,5 @@ const obj = {
 const { address } = obj;
 address.city = "Ha Noi";
 console.log(obj.address.city); // "Ha Noi"
-
+```
 Để tránh việc bị ảnh hưởng có thể dùng clone
